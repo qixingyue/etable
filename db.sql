@@ -1,3 +1,5 @@
+/** grant all privileges on  etable.* to 'shaddow'@'localhost' identified by '123456'; **/
+
 create database etable;
 use etable;
 
@@ -13,10 +15,7 @@ create table et_data(
 	c_h varchar(30)
 );
 
-insert into et_data (`c_a`,`c_b`,`c_c`,`c_d`,`c_e`,`c_f`,`c_g`,`c_h`) 
-values('A1','B1','C1','D1','E1','F1','G1','H1');
-
-insert into et_data (`c_a`,`c_b`,`c_c`,`c_d`,`c_e`,`c_f`,`c_g`,`c_h`) 
-values('A2','B2','C2','D2','E2','F2','G2','H2');
-
-/** grant all privileges on  etable.* to 'shaddow'@'localhost' identified by '123456'; **/
+LOCK TABLES `et_data` WRITE;
+/*!40000 ALTER TABLE `et_data` DISABLE KEYS */;
+INSERT INTO `et_data` VALUES (12,'my','heart','will','go','on','and','on','forever'),(13,'hello','world','are','you','ok','with','your','skill'),(14,'when','i','was','young','i','listen','to','the radio'),(15,'wait','for','my','faveriate','song','you','like','it'),(17,'你','好','吗？','你','真的','好','嘛','确定？'),(18,'我','很','好','啊','谢谢','你','吧','非常'),(19,'故事','发生','在','1998','年','那时候','我们','都不大'),(20,'php','javascript','c','c++','python','golang','c#','java');
+UNLOCK TABLES;
